@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { Providers } from '@/common/redux/provider';
+import { Providers } from '@/redux/provider';
+import { Registry as StyledComponentsRegistry } from '@/utils/registry';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -99,7 +100,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </Providers>
       </body>
     </html>
   );
