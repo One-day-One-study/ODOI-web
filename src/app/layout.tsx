@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { Providers } from '@/common/redux/provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -92,8 +93,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
         <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
         <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
