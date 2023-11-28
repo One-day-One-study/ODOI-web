@@ -2,6 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 import { reset } from 'styled-reset';
 
 export const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: "Righteous";
+    src: url(/fonts/Righteous-Regular.ttf);
+  }
+  @font-face {
+    font-family: 'Pretendard';
+    src: url(/fonts/Pretendard-Regular.tts);
+  }
   ${reset}
   * {
     box-sizing: border-box;
