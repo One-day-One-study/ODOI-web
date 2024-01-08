@@ -7,7 +7,7 @@ import Icon from '../common/Icon';
 
 const RegisterButton = ({ type }: { type: 'mobile' | 'desktop' }) => {
   return (
-    <RegisterButtonWrapper isMobile={(type === 'mobile').toString()}>
+    <RegisterButtonWrapper mobile={(type === 'mobile').toString()}>
       {type === 'mobile' ? (
         '문제 등록하기'
       ) : (
@@ -19,9 +19,9 @@ const RegisterButton = ({ type }: { type: 'mobile' | 'desktop' }) => {
 
 export default RegisterButton;
 
-const RegisterButtonWrapper = styled.button<{ isMobile: string }>`
-  ${({ isMobile }) =>
-    isMobile === 'true' &&
+const RegisterButtonWrapper = styled.button<{ mobile: string }>`
+  ${({ mobile }) =>
+    mobile === 'true' &&
     css`
       padding: 20px 32px;
 
@@ -36,8 +36,8 @@ const RegisterButtonWrapper = styled.button<{ isMobile: string }>`
       line-height: normal;
     `}
 
-  ${({ isMobile }) =>
-    isMobile === 'false' &&
+  ${({ mobile }) =>
+    mobile === 'false' &&
     css`
       position: fixed;
       right: 12px;

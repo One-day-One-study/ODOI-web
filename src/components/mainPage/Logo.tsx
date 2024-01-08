@@ -30,4 +30,12 @@ const LogoWrapper = styled.div`
     color: ${COLORS.BLUE_100};
     font-size: 40px;
   }
+
+  @media (max-width: 767px) {
+    margin-top: 60px;
+    font-size: 80px;
+    .subText {
+      font-size: 20px;
+    }
+  }
 `;
