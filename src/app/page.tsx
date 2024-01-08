@@ -29,11 +29,7 @@ export default function MainPage() {
       {!isMobile && <Header />}
       <Logo />
       <Spacing size={115} />
-      {isMobile && (
-        <div className="explainText">
-          오늘 풀어볼 문제의 카테고리를 선택해주세요.
-        </div>
-      )}
+      <div className="explainText">오늘 풀어볼 문제의 카테고리를 선택해주세요.</div>
       <ButtonWrapper>
         {CATEGORIES.map((category) => (
           <CategoryButton
@@ -59,11 +55,17 @@ const MainPageContainer = styled.div`
   align-items: center;
 
   .explainText {
+    margin-bottom: 20px;
+
     color: ${COLORS.BLUE_100};
     font-family: 'Pretendard';
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 600;
     line-height: normal;
+    @media (max-width: 767px) {
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
   }
 `;
 
@@ -79,7 +81,6 @@ const ButtonWrapper = styled.div`
   @media (max-width: 767px) {
     gap: 12px;
     width: 70%;
-    margin-top: 16px;
   }
 `;
 
