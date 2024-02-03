@@ -20,7 +20,7 @@ const LogoWrapper = styled.div`
   text-align: center;
 
   color: ${COLORS.BLUE_200};
-  font-size: 160px;
+  font-size: 120px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

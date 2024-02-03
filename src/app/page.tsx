@@ -85,8 +85,8 @@ const ButtonWrapper = styled.div`
 `;
 
 const CategoryButton = styled.button<{ clicked: string }>`
-  padding: 12px 14px;
-  border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 4px;
 
   font-size: 20px;
   font-style: normal;
@@ -106,13 +106,13 @@ const CategoryButton = styled.button<{ clicked: string }>`
     `};
 
   @media (max-width: 767px) {
-    padding: 7px 12px;
+    padding: 8px;
     font-size: 12px;
   }
 `;
 
 const Button = styled.button`
-  padding: 30px 47px;
+  padding: 24px 48px;
 
   border-radius: 12px;
   background: ${COLORS.BLUE_200};
@@ -125,7 +125,7 @@ const Button = styled.button`
   line-height: normal;
 
   @media (max-width: 767px) {
-    padding: 20px 32px;
+    padding: 24px 32px;
     font-size: 24px;
     margin-bottom: 18px;
   }

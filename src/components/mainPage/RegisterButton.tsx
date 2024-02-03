@@ -23,7 +23,7 @@ const RegisterButtonWrapper = styled.button<{ mobile: string }>`
   ${({ mobile }) =>
     mobile === 'true' &&
     css`
-      padding: 20px 32px;
+      padding: 24px 32px;
 
       border-radius: 12px;
       background: ${COLORS.BLUE_100};
