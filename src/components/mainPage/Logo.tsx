@@ -1,18 +1,18 @@
-'use client';
+'use client'
 
-import { COLORS } from '@/styles/colors';
-import React from 'react';
-import styled from 'styled-components';
+import { COLORS } from '@/styles/colors'
+import React from 'react'
+import styled from 'styled-components'
 
 const Logo = () => {
   return (
     <LogoWrapper>
       ODOI <div className="subText">One day, One interview</div>
     </LogoWrapper>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo
 
 const LogoWrapper = styled.div`
   display: flex;
@@ -38,4 +38,4 @@ const LogoWrapper = styled.div`
       font-size: 20px;
     }
   }
-`;
+`

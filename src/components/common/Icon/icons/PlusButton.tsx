@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const PlusButton = () => {
   return (
@@ -17,7 +17,7 @@ const PlusButton = () => {
         fill="white"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default PlusButton;
+export default PlusButton

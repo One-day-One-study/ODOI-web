@@ -1,1 +1,1 @@
-export { default as PlusButton } from './PlusButton';
+export { default as PlusButton } from './PlusButton'

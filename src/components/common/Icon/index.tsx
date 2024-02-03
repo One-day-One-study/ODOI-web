@@ -1,28 +1,28 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import * as icons from '@/components/common/Icon/icons';
+import * as icons from '@/components/common/Icon/icons'
 
 interface IconProps {
-  icon: string;
-  width?: number;
-  height?: number;
-  rotate?: number;
+  icon: string
+  width?: number
+  height?: number
+  rotate?: number
 }
 
 const Icon = ({ icon, width, height, rotate }: IconProps) => {
-  const IconComponent = icons[icon as keyof typeof icons];
+  const IconComponent = icons[icon as keyof typeof icons]
   return (
     <IconWrapper width={width} height={height} rotate={rotate}>
       <IconComponent />
     </IconWrapper>
-  );
-};
+  )
+}
 
 const IconWrapper = styled.div<{
-  width?: number;
-  height?: number;
-  rotate?: number;
+  width?: number
+  height?: number
+  rotate?: number
 }>`
   display: flex;
   justify-content: center;
@@ -39,6 +39,6 @@ const IconWrapper = styled.div<{
     width: ${({ width }) => width}px;
     height: ${({ height }) => height}px;
   }
-`;
+`
 
-export default Icon;
+export default Icon
