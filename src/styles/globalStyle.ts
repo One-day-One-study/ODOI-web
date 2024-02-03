@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import { reset } from 'styled-reset';
+import { createGlobalStyle } from 'styled-components'
+import { reset } from 'styled-reset'
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -29,4 +29,4 @@ export const GlobalStyle = createGlobalStyle`
     all: unset;
     cursor: pointer;
   }
-`;
+`

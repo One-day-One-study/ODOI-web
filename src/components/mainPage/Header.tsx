@@ -1,14 +1,14 @@
-'use client';
+'use client'
 
-import { COLORS } from '@/styles/colors';
-import React from 'react';
-import styled from 'styled-components';
+import { COLORS } from '@/styles/colors'
+import React from 'react'
+import styled from 'styled-components'
 
 const Header = () => {
-  return <HeaderWrapper>ODOI</HeaderWrapper>;
-};
+  return <HeaderWrapper>ODOI</HeaderWrapper>
+}
 
-export default Header;
+export default Header
 
 const HeaderWrapper = styled.div`
   width: 100%;
@@ -21,4 +21,4 @@ const HeaderWrapper = styled.div`
   line-height: normal;
 
   font-family: 'Righteous';
-`;
+`

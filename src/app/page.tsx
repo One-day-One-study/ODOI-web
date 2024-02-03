@@ -1,35 +1,37 @@
-'use client';
+'use client'
 
-import styled, { css } from 'styled-components';
-import { useState } from 'react';
+import styled, { css } from 'styled-components'
+import { useState } from 'react'
 
-import Header from '@/components/mainPage/Header';
-import Logo from '@/components/mainPage/Logo';
-import Spacing from '@/components/common/Spacing';
-import RegisterButton from '@/components/mainPage/RegisterButton';
-import { CATEGORIES } from '@/constants/categories';
-import { COLORS } from '@/styles/colors';
-import useResponsiveLayout from '@/hooks/useResponsiveLayout';
+import Header from '@/components/mainPage/Header'
+import Logo from '@/components/mainPage/Logo'
+import Spacing from '@/components/common/Spacing'
+import RegisterButton from '@/components/mainPage/RegisterButton'
+import { CATEGORIES } from '@/constants/categories'
+import { COLORS } from '@/styles/colors'
+import useResponsiveLayout from '@/hooks/useResponsiveLayout'
 
 export default function MainPage() {
-  const { isMobile } = useResponsiveLayout();
+  const { isMobile } = useResponsiveLayout()
 
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categories, setCategories] = useState<string[]>([])
 
   const handleClickCategory = (category: string) => {
     if (categories.includes(category)) {
-      setCategories(categories.filter((el) => el !== category));
-      return;
+      setCategories(categories.filter((el) => el !== category))
+      return
     }
-    setCategories((prev) => [...prev, category]);
-  };
+    setCategories((prev) => [...prev, category])
+  }
 
   return (
     <MainPageContainer>
       {!isMobile && <Header />}
       <Logo />
       <Spacing size={115} />
-      <div className="explainText">오늘 풀어볼 문제의 카테고리를 선택해주세요.</div>
+      <div className="explainText">
+        오늘 풀어볼 문제의 카테고리를 선택해주세요.
+      </div>
       <ButtonWrapper>
         {CATEGORIES.map((category) => (
           <CategoryButton
@@ -45,7 +47,7 @@ export default function MainPage() {
       <Button>랜덤 문제 뽑기</Button>
       <RegisterButton type={isMobile ? 'mobile' : 'desktop'} />
     </MainPageContainer>
-  );
+  )
 }
 
 const MainPageContainer = styled.div`
@@ -67,7 +69,7 @@ const MainPageContainer = styled.div`
       font-size: 18px;
     }
   }
-`;
+`
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -82,7 +84,7 @@ const ButtonWrapper = styled.div`
     gap: 12px;
     width: 70%;
   }
-`;
+`
 
 const CategoryButton = styled.button<{ clicked: string }>`
   padding: 8px 16px;
@@ -109,7 +111,7 @@ const CategoryButton = styled.button<{ clicked: string }>`
     padding: 8px;
     font-size: 12px;
   }
-`;
+`
 
 const Button = styled.button`
   padding: 24px 48px;
@@ -129,4 +131,4 @@ const Button = styled.button`
     font-size: 24px;
     margin-bottom: 18px;
   }
-`;
+`

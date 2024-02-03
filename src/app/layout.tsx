@@ -1,18 +1,22 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import { Providers } from '@/redux/provider';
-import { Registry as StyledComponentsRegistry } from '@/utils/registry';
-import QueryClientProviders from '@/utils/provider';
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { Providers } from '@/redux/provider'
+import { Registry as StyledComponentsRegistry } from '@/utils/registry'
+import QueryClientProviders from '@/utils/provider'
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'ODOI',
   description: 'One day, One Interview',
-};
+}
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <head>
@@ -92,9 +96,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta name="msapplication-TileImage" content="mstile-144x144.png" />
         <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
-        <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
-        <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
-        <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+        <meta
+          name="msapplication-square150x150logo"
+          content="mstile-150x150.png"
+        />
+        <meta
+          name="msapplication-wide310x150logo"
+          content="mstile-310x150.png"
+        />
+        <meta
+          name="msapplication-square310x310logo"
+          content="mstile-310x310.png"
+        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -108,5 +121,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </QueryClientProviders>
       </body>
     </html>
-  );
+  )
 }

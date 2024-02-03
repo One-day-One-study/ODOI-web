@@ -5,4 +5,4 @@ export const COLORS = {
   PINK_100: '#FFF2F2',
 
   WHITE: '#FFFFFF',
-};
+}

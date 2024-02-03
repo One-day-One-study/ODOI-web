@@ -1,9 +1,9 @@
-'use client';
+'use client'
 
-import { COLORS } from '@/styles/colors';
-import React from 'react';
-import styled, { css } from 'styled-components';
-import Icon from '../common/Icon';
+import { COLORS } from '@/styles/colors'
+import React from 'react'
+import styled, { css } from 'styled-components'
+import Icon from '../common/Icon'
 
 const RegisterButton = ({ type }: { type: 'mobile' | 'desktop' }) => {
   return (
@@ -14,10 +14,10 @@ const RegisterButton = ({ type }: { type: 'mobile' | 'desktop' }) => {
         <Icon icon="PlusButton" width={48} height={48} />
       )}
     </RegisterButtonWrapper>
-  );
-};
+  )
+}
 
-export default RegisterButton;
+export default RegisterButton
 
 const RegisterButtonWrapper = styled.button<{ mobile: string }>`
   ${({ mobile }) =>
@@ -44,4 +44,4 @@ const RegisterButtonWrapper = styled.button<{ mobile: string }>`
       bottom: 12px;
       z-index: 1000000;
     `}
-`;
+`

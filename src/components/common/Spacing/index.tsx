@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const Spacing = ({ size }: { size: number }) => {
   return (
@@ -9,7 +9,7 @@ const Spacing = ({ size }: { size: number }) => {
         backgroundColor: `transparent`,
       }}
     />
-  );
-};
+  )
+}
 
-export default Spacing;
+export default Spacing
