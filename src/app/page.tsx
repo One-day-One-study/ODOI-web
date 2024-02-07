@@ -1,7 +1,8 @@
 'use client'
 
-import styled, { css } from 'styled-components'
 import { useState } from 'react'
+import styled, { css } from 'styled-components'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 import Header from '@/components/mainPage/Header'
 import Logo from '@/components/mainPage/Logo'
@@ -13,15 +14,27 @@ import useResponsiveLayout from '@/hooks/useResponsiveLayout'
 
 export default function MainPage() {
   const { isMobile } = useResponsiveLayout()
+  const searchParams = useSearchParams()
+  const router = useRouter()
 
-  const [categories, setCategories] = useState<string[]>([])
+  const [categories, setCategories] = useState<number[]>([])
 
-  const handleClickCategory = (category: string) => {
+  const handleClickCategory = (category: number) => {
     if (categories.includes(category)) {
       setCategories(categories.filter((el) => el !== category))
       return
     }
     setCategories((prev) => [...prev, category])
+  }
+
+  const handleClickInterview = () => {
+    const params = new URLSearchParams(searchParams)
+    if (categories) {
+      params.set('id', String(categories[0]))
+    } else {
+      params.delete('id')
+    }
+    router.push(`/interview?${params.toString()}`)
   }
 
   return (
@@ -33,18 +46,18 @@ export default function MainPage() {
         오늘 풀어볼 문제의 카테고리를 선택해주세요.
       </div>
       <ButtonWrapper>
-        {CATEGORIES.map((category) => (
+        {CATEGORIES.map((category: { id: number; value: string }) => (
           <CategoryButton
-            key={category}
-            clicked={categories.includes(category).toString()}
-            onClick={() => handleClickCategory(category)}
+            key={category.id}
+            clicked={(categories.indexOf(category.id) !== -1).toString()}
+            onClick={() => handleClickCategory(category.id)}
           >
-            {category}
+            {category.value}
           </CategoryButton>
         ))}
       </ButtonWrapper>
       <Spacing size={98} />
-      <Button>랜덤 문제 뽑기</Button>
+      <Button onClick={handleClickInterview}>랜덤 문제 뽑기</Button>
       <RegisterButton type={isMobile ? 'mobile' : 'desktop'} />
     </MainPageContainer>
   )
