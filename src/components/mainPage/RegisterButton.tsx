@@ -5,9 +5,18 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import Icon from '../common/Icon'
 
-const RegisterButton = ({ type }: { type: 'mobile' | 'desktop' }) => {
+const RegisterButton = ({
+  type,
+  onClick,
+}: {
+  type: 'mobile' | 'desktop'
+  onClick: () => void
+}) => {
   return (
-    <RegisterButtonWrapper mobile={(type === 'mobile').toString()}>
+    <RegisterButtonWrapper
+      mobile={(type === 'mobile').toString()}
+      onClick={onClick}
+    >
       {type === 'mobile' ? (
         '문제 등록하기'
       ) : (

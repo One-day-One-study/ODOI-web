@@ -11,8 +11,12 @@ import RegisterButton from '@/components/mainPage/RegisterButton'
 import { CATEGORIES } from '@/constants/categories'
 import { COLORS } from '@/styles/colors'
 import useResponsiveLayout from '@/hooks/useResponsiveLayout'
+import useModal from '@/hooks/useModal'
+import Modal from '@/components/common/Modal'
+import RegisterQuestionModal from '@/components/modal/RegisterQuestionModal'
 
 export default function MainPage() {
+  const { isShowModal, openModal, closeModal } = useModal()
   const { isMobile } = useResponsiveLayout()
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -37,6 +41,10 @@ export default function MainPage() {
     router.push(`/interview?${params.toString()}`)
   }
 
+  const handleClickRegisterQuestion = () => {
+    openModal()
+  }
+
   return (
     <MainPageContainer>
       {!isMobile && <Header />}
@@ -58,7 +66,16 @@ export default function MainPage() {
       </ButtonWrapper>
       <Spacing size={98} />
       <Button onClick={handleClickInterview}>랜덤 문제 뽑기</Button>
-      <RegisterButton type={isMobile ? 'mobile' : 'desktop'} />
+      <RegisterButton
+        type={isMobile ? 'mobile' : 'desktop'}
+        onClick={handleClickRegisterQuestion}
+      />
+
+      {isShowModal && (
+        <Modal isVisible={isShowModal} closeModal={closeModal}>
+          <RegisterQuestionModal closeModal={closeModal} />
+        </Modal>
+      )}
     </MainPageContainer>
   )
 }
@@ -99,7 +116,7 @@ const ButtonWrapper = styled.div`
   }
 `
 
-const CategoryButton = styled.button<{ clicked: string }>`
+export const CategoryButton = styled.button<{ clicked: string }>`
   padding: 8px 16px;
   border-radius: 4px;
 
