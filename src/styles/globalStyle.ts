@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   @font-face {
     font-family: 'Pretendard';
-    src: url(/fonts/Pretendard-Regular.ttf);
+    src: url(/fonts/Pretendard-Regular.woff2);
   }
   ${reset}
   * {
