@@ -29,4 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     all: unset;
     cursor: pointer;
   }
+  button:disabled {
+    cursor: inherit;
+  }
 `
