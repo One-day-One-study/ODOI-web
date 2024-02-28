@@ -1,4 +1,4 @@
-export const CATEGORIES = [
+const CATEGORIES = [
   { id: 1, value: 'Algorithm' },
   { id: 2, value: 'Web' },
   { id: 3, value: 'AI/ML' },
@@ -10,3 +10,5 @@ export const CATEGORIES = [
   { id: 9, value: 'DB' },
   { id: 10, value: 'OS' },
 ]
+
+export default CATEGORIES

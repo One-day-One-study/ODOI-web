@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import { reset } from 'styled-reset'
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Righteous";
     src: url(/fonts/Righteous-Regular.ttf);
@@ -33,3 +33,4 @@ export const GlobalStyle = createGlobalStyle`
     cursor: inherit;
   }
 `
+export default GlobalStyle

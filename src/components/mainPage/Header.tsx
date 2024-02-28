@@ -1,12 +1,10 @@
 'use client'
 
-import { COLORS } from '@/styles/colors'
 import React from 'react'
 import styled from 'styled-components'
+import COLORS from '@/styles/colors'
 
-const Header = () => {
-  return <HeaderWrapper>ODOI</HeaderWrapper>
-}
+const Header = () => <HeaderWrapper>ODOI</HeaderWrapper>
 
 export default Header
 

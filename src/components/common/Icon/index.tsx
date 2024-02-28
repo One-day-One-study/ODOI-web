@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import * as icons from '@/components/common/Icon/icons'
 
 interface IconProps {
@@ -10,7 +9,7 @@ interface IconProps {
   rotate?: number
 }
 
-const Icon = ({ icon, width, height, rotate }: IconProps) => {
+const Icon = ({ icon, width = 24, height = 24, rotate = 0 }: IconProps) => {
   const IconComponent = icons[icon as keyof typeof icons]
   return (
     <IconWrapper width={width} height={height} rotate={rotate}>
@@ -20,9 +19,9 @@ const Icon = ({ icon, width, height, rotate }: IconProps) => {
 }
 
 const IconWrapper = styled.div<{
-  width?: number
-  height?: number
-  rotate?: number
+  width: number
+  height: number
+  rotate: number
 }>`
   display: flex;
   justify-content: center;
@@ -40,5 +39,11 @@ const IconWrapper = styled.div<{
     height: ${({ height }) => height}px;
   }
 `
+
+Icon.defaultProps = {
+  width: 24,
+  height: 24,
+  rotate: 0,
+}
 
 export default Icon

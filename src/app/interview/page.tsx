@@ -1,17 +1,17 @@
 'use client'
 
-import Spacing from '@/components/common/Spacing'
-import Logo from '@/components/interviewPage/Logo'
-import { INTERVIEW } from '@/constants/interview'
-import { COLORS } from '@/styles/colors'
-import { useSearchParams } from 'next/navigation'
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import Spacing from '@/components/common/Spacing'
+import Logo from '@/components/interviewPage/Logo'
+import INTERVIEW from '@/constants/interview'
+import COLORS from '@/styles/colors'
+import { useSearchParams } from 'next/navigation'
 
 const InterviewPage = () => {
   const searchParams = useSearchParams()
   const interview = INTERVIEW.find(
-    (interview) => interview.category[0] === Number(searchParams.get('id')),
+    (el) => el.category[0] === Number(searchParams.get('id')),
   )
   const [isShowAnswer, setIsShowAnswer] = useState(false)
 

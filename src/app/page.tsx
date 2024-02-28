@@ -8,12 +8,12 @@ import Header from '@/components/mainPage/Header'
 import Logo from '@/components/mainPage/Logo'
 import Spacing from '@/components/common/Spacing'
 import RegisterButton from '@/components/mainPage/RegisterButton'
-import { CATEGORIES } from '@/constants/categories'
-import { COLORS } from '@/styles/colors'
 import useResponsiveLayout from '@/hooks/useResponsiveLayout'
 import useModal from '@/hooks/useModal'
 import Modal from '@/components/common/Modal'
 import RegisterQuestionModal from '@/components/modal/RegisterQuestionModal'
+import CATEGORIES from '@/constants/categories'
+import COLORS from '@/styles/colors'
 
 export default function MainPage() {
   const { isShowModal, openModal, closeModal } = useModal()
@@ -116,7 +116,7 @@ const ButtonWrapper = styled.div`
   }
 `
 
-export const CategoryButton = styled.button<{ clicked: string }>`
+const CategoryButton = styled.button<{ clicked: string }>`
   padding: 8px 16px;
   border-radius: 4px;
 

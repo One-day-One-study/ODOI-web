@@ -1,4 +1,4 @@
-export const INTERVIEW = [
+const INTERVIEW = [
   {
     id: 1,
     category: [2],
@@ -31,3 +31,5 @@ export const INTERVIEW = [
     - 타입스크립트를 자바스크립트로 변환`,
   },
 ]
+
+export default INTERVIEW
