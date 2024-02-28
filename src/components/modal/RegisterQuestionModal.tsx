@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { ModalWrapper, SectionTitle, Title } from './ModalStyldComponents'
-import { CategoryButton } from '@/app/page'
-import { CATEGORIES } from '@/constants/categories'
+
 import styled, { css } from 'styled-components'
-import TextArea from '../common/TextArea'
-import { COLORS } from '@/styles/colors'
+
 import useResponsiveLayout from '@/hooks/useResponsiveLayout'
+import COLORS from '@/styles/colors'
+import CATEGORIES from '@/constants/categories'
+import TextArea from '../common/TextArea'
+import { ModalWrapper, SectionTitle, Title } from './ModalStyldComponents'
 
 const RegisterQuestionModal = ({ closeModal }: { closeModal: () => void }) => {
   const { isMobile } = useResponsiveLayout()
@@ -78,6 +79,32 @@ const ButtonWrapper = styled.div`
 
   @media (max-width: 767px) {
     gap: 12px;
+  }
+`
+const CategoryButton = styled.button<{ clicked: string }>`
+  padding: 8px 16px;
+  border-radius: 4px;
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  font-family: 'Pretendard';
+
+  border: 1px solid ${COLORS.BLUE_100};
+  color: ${COLORS.BLUE_100};
+
+  ${({ clicked }) =>
+    clicked === 'true' &&
+    css`
+      background-color: ${COLORS.BLUE_100};
+      color: ${COLORS.WHITE};
+      border: none;
+    `};
+
+  @media (max-width: 767px) {
+    padding: 8px;
+    font-size: 12px;
   }
 `
 

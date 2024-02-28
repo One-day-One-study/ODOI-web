@@ -1,11 +1,11 @@
 'use client'
 
-import { GlobalStyle } from '@/styles/globalStyle'
+import GlobalStyle from '@/styles/globalStyle'
 import { useServerInsertedHTML } from 'next/navigation'
 import React, { useState } from 'react'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
-export const Registry = ({ children }: { children: React.ReactNode }) => {
+const Registry = ({ children }: { children: React.ReactNode }) => {
   const [sheet] = useState(() => new ServerStyleSheet())
 
   useServerInsertedHTML(() => {
@@ -25,3 +25,5 @@ export const Registry = ({ children }: { children: React.ReactNode }) => {
     </StyleSheetManager>
   )
 }
+
+export default Registry

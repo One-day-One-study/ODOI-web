@@ -1,8 +1,8 @@
 'use client'
 
-import { COLORS } from '@/styles/colors'
 import React from 'react'
 import styled, { css } from 'styled-components'
+import COLORS from '@/styles/colors'
 import Icon from '../common/Icon'
 
 const RegisterButton = ({
@@ -11,20 +11,18 @@ const RegisterButton = ({
 }: {
   type: 'mobile' | 'desktop'
   onClick: () => void
-}) => {
-  return (
-    <RegisterButtonWrapper
-      mobile={(type === 'mobile').toString()}
-      onClick={onClick}
-    >
-      {type === 'mobile' ? (
-        '문제 등록하기'
-      ) : (
-        <Icon icon="PlusButton" width={48} height={48} />
-      )}
-    </RegisterButtonWrapper>
-  )
-}
+}) => (
+  <RegisterButtonWrapper
+    mobile={(type === 'mobile').toString()}
+    onClick={onClick}
+  >
+    {type === 'mobile' ? (
+      '문제 등록하기'
+    ) : (
+      <Icon icon="PlusButton" width={48} height={48} />
+    )}
+  </RegisterButtonWrapper>
+)
 
 export default RegisterButton
 

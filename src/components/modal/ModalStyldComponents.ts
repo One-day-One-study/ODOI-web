@@ -1,11 +1,11 @@
-import { COLORS } from '@/styles/colors'
+import COLORS from '@/styles/colors'
 import styled from 'styled-components'
 
 export const ModalWrapper = styled.div<{ width?: string }>`
   display: flex;
   flex-direction: column;
 
-  width: ${({ width }) => (width ? width : '')};
+  width: ${({ width }) => width || ''};
   padding: 20px;
   background-color: ${COLORS.WHITE};
   border-radius: 8px;

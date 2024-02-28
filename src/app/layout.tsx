@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Providers } from '@/redux/provider'
-import { Registry as StyledComponentsRegistry } from '@/utils/registry'
+import Providers from '@/redux/provider'
+import Registry from '@/utils/registry'
 import QueryClientProviders from '@/utils/provider'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -116,7 +116,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <QueryClientProviders>
           <Providers>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+            <Registry>{children}</Registry>
           </Providers>
         </QueryClientProviders>
       </body>

@@ -1,16 +1,14 @@
 'use client'
 
-import { COLORS } from '@/styles/colors'
 import React from 'react'
 import styled from 'styled-components'
+import COLORS from '@/styles/colors'
 
-const Logo = () => {
-  return (
-    <LogoWrapper>
-      ODOI <div className="subText">One day, One interview</div>
-    </LogoWrapper>
-  )
-}
+const Logo = () => (
+  <LogoWrapper>
+    ODOI <div className="subText">One day, One interview</div>
+  </LogoWrapper>
+)
 
 export default Logo
 

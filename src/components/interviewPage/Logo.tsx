@@ -1,12 +1,10 @@
 'use client'
 
-import { COLORS } from '@/styles/colors'
 import React from 'react'
 import styled from 'styled-components'
+import COLORS from '@/styles/colors'
 
-const Logo = () => {
-  return <LogoWrapper>ODOI</LogoWrapper>
-}
+const Logo = () => <LogoWrapper>ODOI</LogoWrapper>
 
 export default Logo
 

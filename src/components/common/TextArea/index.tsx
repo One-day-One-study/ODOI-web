@@ -1,6 +1,6 @@
-import { COLORS } from '@/styles/colors'
 import React from 'react'
 import styled from 'styled-components'
+import COLORS from '@/styles/colors'
 
 const TextArea = ({
   value,
@@ -8,9 +8,7 @@ const TextArea = ({
 }: {
   value: string
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
-}) => {
-  return <TextAreaContainer value={value} onChange={onChange} />
-}
+}) => <TextAreaContainer value={value} onChange={onChange} />
 
 export default TextArea
 
