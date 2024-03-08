@@ -4,6 +4,8 @@ import './globals.css'
 import Providers from '@/redux/provider'
 import Registry from '@/utils/registry'
 import QueryClientProviders from '@/utils/provider'
+import { Suspense } from 'react'
+import Loading from '@/components/common/Loading'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -116,7 +118,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <QueryClientProviders>
           <Providers>
-            <Registry>{children}</Registry>
+            <Registry>
+              <Suspense fallback={<Loading />}>{children}</Suspense>
+            </Registry>
           </Providers>
         </QueryClientProviders>
       </body>
