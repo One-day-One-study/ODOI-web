@@ -1,14 +1,14 @@
-import { createGlobalStyle } from 'styled-components';
-import { reset } from 'styled-reset';
+import { createGlobalStyle } from 'styled-components'
+import { reset } from 'styled-reset'
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Righteous";
     src: url(/fonts/Righteous-Regular.ttf);
   }
   @font-face {
     font-family: 'Pretendard';
-    src: url(/fonts/Pretendard-Regular.tts);
+    src: url(/fonts/Pretendard-Regular.woff2);
   }
   ${reset}
   * {
@@ -29,4 +29,8 @@ export const GlobalStyle = createGlobalStyle`
     all: unset;
     cursor: pointer;
   }
-`;
+  button:disabled {
+    cursor: inherit;
+  }
+`
+export default GlobalStyle
